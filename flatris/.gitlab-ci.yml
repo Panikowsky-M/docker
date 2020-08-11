@@ -1,0 +1,8 @@
+image: docker
+
+service:
+- docker:dind
+
+build:
+  script:
+    - docker build . --tag flatris  
