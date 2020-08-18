@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>Html escaping test</title>
+		<link rel=stylesheet href=styles/2style.css>
+	</head>
+<body>
+<!--<h2>Вход в bWAPP</h2>
+<a class=li href=http://www.awesomesite.com/bWAPP/install.php?>Запустить bWAPP</a>--!>
+<h1>All this text in &lt/h1&gt is amazing !</h1>
+<p>Эта надпись парсится корректно</p>
+
+<img src=media/pics/docker_ico.png height=64 width=64>
+<h6>Внимание, на момент установки рефов сайт разворачивался на локальной машине, докер не в курсе куда они ведут!</h6>
+<p>На странице с постмессаж, сообщение тоже не отсылается, так как докер не знает куда</p>
+<p>Многие скрипты тоже не отвечают из-за того что пока не знают куда слать запрос</p>
+
+<textarea>TODO: Разобраться с рефами</textarea>
+
+<div id=table1>
+	<div id=content>
+	<div class=header>
+		<h6>Содержание</h6>
+	</div>
+	<div class=content>
+		<table id=puncts>
+		  <thead><tr> <th>Ссылка</th> </tr> </thead>
+         <tbody>
+	  <tr>
+             <td> <a href=/1page.html>Проверка ифрейма</a></td>
+	 </tr>
+ 
+	  <tr>
+	     <td><a href=/2page.html>Проверка скриптов</a></td>
+	  </tr>
+
+	 <tr>
+	  <td><a href=/3page.html>Проверка установки CSP</a></td>
+	 </tr>
+
+         <tr>
+	  <td><a href=/4page.html>Проверка проставки кук</a></td>
+	</tr>
+
+         <tr>
+	  <td><a href=/5page.html>Куки дубль 2</a></td>
+	</tr>
+	
+        <tr>
+	  <td><a href=/6page.html>Проверка postMessage</a></td>
+	</tr>
+	</tbody>	 	 
+     </thead>
+
+</body>
+</html>

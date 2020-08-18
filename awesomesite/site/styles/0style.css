@@ -1,0 +1,25 @@
+.header {
+	font-family: Sans;
+	font-style: Bold;
+	width: 45em;
+	margin: 2 auto;
+}
+
+.button {
+	font-family: Sans;
+	font-style: Italic;
+	color: lightblue;
+	border: 2px ridge pink;
+	background: purple;
+}
+
+.paragraph {
+	font-family: Sans;
+}
+
+.console {
+	font-family: Monospace;
+	color: orange;
+	background:black;
+
+}

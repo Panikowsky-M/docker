@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>Проверка CSP</title>
+		<link rel=stylesheet href=styles/0style.css>
+		<style>
+			.li {
+				font-family: Sans;
+				font-style: Italic;
+				color: green;
+			}
+		</style>
+	</head>
+<body>
+	<h1 class=header>Эта страница проверяет установку политики CSP</h1>
+	<a class=li href='http://www.awesomesite.com/php/newscript.php?name=<script src="http://www.victim.com/scripts/xss.js"></script>'>XSS CSP TEST</a>
+</body>
+</html>

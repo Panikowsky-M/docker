@@ -1,0 +1,30 @@
+body {
+	background-image: url(/media/pics/background.jpg);
+}
+.header {
+	font-family: Sans;	
+	font-style: Bold;
+	color: lightgray;
+	width: 45em;
+	margin: 2 auto;
+}
+
+.button {
+	font-family: Sans;
+	font-style: Italic;
+	color: lightblue;
+	border: 2px ridge pink;
+	background: purple;
+}
+
+.paragraph {
+	font-family: Sans;
+	color: silver;
+}
+
+.console {
+	font-family: Monospace;
+	color: orange;
+	background:black;
+
+}

@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charset=utf-8>
+		<link rel=stylesheet href=styles/1style.css>
+		<script type=text/javascript src=scripts/0script.js></script>
+		<script type=text/javascript src=scripts/1script.js></script>
+		<script type=text/javascript src=scripts/5script.js></script>
+		<script>
+			function recieveXHR(){
+			       var xhr = new XMLHttpRequest();
+			       xhr.open("GET","http://www.victim.com/test.txt",false);
+			       xhr.send();
+			     
+			       	if( xhr.status != 200) {
+			       	  alert(xhr.status + ': ' + xhr.statusText);
+			       	}
+			       	else 
+			       	{
+			       		alert(xhr.responseText);
+			       	}
+			       }
+			</script>
+		<title>Проверка скриптов</title>
+	</head>
+	<body>
+		<h1 class=header>Эта страница нужна для проверки js</h1>
+		<div id=org_div1>Текст сгенерирован автоматически</div>
+		<button class=button onclick="hey( )">Не нажимать</button></br>
+		<button class=button onclick="addElement( )">Это тоже не нажимать</button>
+		<button class=button onclick="SendXHR( )">Парсинг json</button>
+		</br>
+		<button class=button onclick="recieveXHR( )">Прием данных по XHR</button>
+		<button class=button onclick="XHRrx( )">XHR дубль 2</button>
+		<p id=userinfo></p>
+	</body>
+</html>
