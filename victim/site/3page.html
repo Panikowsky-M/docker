@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<meta charset=utf-8>
+		<link rel=styles href=styles/init.css>
+		<title>Работа с web-storage</title>
+	</head>
+<body onload=loadColor()>
+	<h1 class=header>Здесь меняется цвет фона и читается из web storage</h1>
+	<button onclick="changeBodyColor('red')">Make it hell</button>
+	<button onclick="changeBodyColor('green')">Make it grass</button>
+
+	<script>
+		function changeBodyColor(color) {
+			document.body.style.backgroundColor = color;
+			localStorage.setItem("bg",color);
+		}
+		function loadColor() {
+			document.body.style.backgroundColor = localStorage.bg;
+			}
+	</script>
+</body>
+</html>
+

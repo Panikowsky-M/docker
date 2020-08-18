@@ -40,11 +40,16 @@ body {
 a:link, a:visited, a:active {
     color: #E1AA5D;
     text-decoration: none;
+    font-family: monospace;
+    font-size: 12px;
 }
 
 a:hover {
-    color: #FF9600;
+    color: #9E2959;
+    background: #5B0026;
     text-decoration: none;
+    text-shadow: #ddd 1px 1px 0;
+		 #eee -1px -1px 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -129,8 +134,7 @@ ul {
         }
 
 p {
-    padding: 5px 0px 5px 0px;
-    
+    font-size:12px; 
     text-align: justify;
 }
     
@@ -625,76 +629,17 @@ strong.bad-action {
         background-color: #121212;
     }
         
-        div.item div.content.file {
-            margin-top: 5px;
-        }
         
         div.item div.content.file + div.content {
             margin-top: 5px;
         }
-        
-        div.item div.content.comments {
-            padding: 0px 0px 0px 1px;
             
-            background-color: #1F1F1F;
-            border-left: 3px solid #0F0F0F;
-        }
-            
-            div.content.comments > h6 {
-                margin-top: 0px;
-                
-                background-color: #000000;
-                
-                font-size: 11px;
-            }
-            
-            div.content.comments div.markdown + h6 {
-                margin-top: 1px;
-            }
-            
-            div.content.comments div.markdown {
-                overflow: hidden;
-                
-                padding: 0px 5px 0px 5px;
-                
-                background-color: #121212;
-            }
-            
-            p.edited {
-                margin-right: -5px;
-                padding: 5px 0px 3px 0px;
-                
-                text-align: right;
-            }
-                
-                p.edited em {
-                    padding: 3px 5px 3px 5px;
-                    
-                    background-color: #0A0A0A;
-                }
         
         div.content ul {
             padding: 5px 0px 5px 0px;
             margin-left: 10px;
         }
             
-            div.content ul li {
-                padding-left: 15px;
-                
-                background-image: url('../images/bullet_black.png');
-                background-repeat: no-repeat;
-                background-position: -5px center;
-            }
-        
-        div.content ul.naked li {
-            padding-left: 0px;
-            
-            background-image: none;
-        }
-        
-        div.content ul.shallow {
-            margin-left: 0px;
-        }
     
     div#scrot {
         display: none;

@@ -1,0 +1,13 @@
+.link {
+	font-family:Sans;
+	font-style: Italic;
+	color: darkblue;
+}
+
+.header {
+
+	font-family:Verdana;
+	font-style: Bold;
+	margin: 0;
+	width: 45em;
+}

@@ -1,0 +1,2 @@
+Проверка SOP
+http://www.victim.com/test.txt

@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>Проверка сериализации json</title>
+		<script type=text/javascript src=scripts/0script.js></script>
+<style>
+.body {
+	background-color: grey;
+}
+
+.header {
+		font-family:Sans;
+		font-style: Bold;
+		font-size: 32;
+		margin: 0 auto;
+		align: center;
+}
+.but {
+	font-family: Sans;
+	color: black;
+	border: 2px gray ridge;
+	background: silver;
+}
+.frm {
+	font-family: Monospace;
+	color: Yellow;
+	border: 4px gray ridge;
+	background: black;
+}
+.res {
+	font-family: Monospace;
+	color:Orange;
+	font-style:Bold;
+}
+</style>
+</head>
+<body class=body>
+	<h1 class=header><blink>Эта страница нужна для проверки отправки данных на сервер</blink></h1>
+	<input class=frm type=text id=number placeholder="Ввод переменных"></br>
+	<button class=but align=center onclick=sendJSON()>Отправка json</button>
+	<p class=res></p>
+	</body>
+	</html>
