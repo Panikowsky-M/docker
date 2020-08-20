@@ -18,7 +18,13 @@ pipeline {
 		sh 'ping -c5 google.com'
 		sh 'host mail.ru'
 		sh 'whois 77.88.8.8'
- 	}
+ 	     }
+	stage("JenkinsPipesSecondTry") {
+	  steps {
+		sh 'Посмотрим что лежит в хомяке у женьки ...'
+		sh 'ls -al $JENKINS_HOME'
+	      }
+         }
+       }
      }
-   }
 }
