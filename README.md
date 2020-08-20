@@ -9,6 +9,7 @@
 1. [awesomesite](https://github.com/Panikowsky-M/docker/tree/master/awesomesite)
 2. [victim](https://github.com/Panikowsky-M/docker/tree/master/victim)
 3. [flatris](https://github.com/Panikowsky-M/docker/tree/master/flatris)
+4. [pipes](https://github.com/Panikowsky-M/docker/tree/master/pipes)
 
 ## Каталог [**awesomsite/**](https://github.com/Panikowsky-M/docker/tree/master/awesomesite)
 
@@ -32,6 +33,10 @@
 Работает под управлением **node.js** не берусь сказать на счет самостоятельного запуска 
 под node, потому как это проект необходимо было повторить в рамках интенсива и он изначально
 был сконфигурирован под контейнер **node:alpine**.
+
+## Каталог [**pipes**](https://github.com/Panikowsky-M/docker/tree/master/pipes)
+
+Содержит в себе описание того, как должны собираться различные задачи на [Женкинсе](https://www.jenkins.io/).
 
 # Задачи на будущее
 

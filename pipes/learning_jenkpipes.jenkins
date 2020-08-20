@@ -1,0 +1,24 @@
+#!groovy
+
+properties([disableConcurentBuilds()])
+
+pipeline {
+   agent{
+	label 'master'
+   }
+     options {
+	buildDiscarder(logRotator(numToKeepStr: '15', artifactNumToKeepStr: '15'))
+	timestamps()
+	}
+  stages {
+	stage("JenkPipesFirstTry") {
+	  steps {
+		sh 'echo Это мой учебный пайп, пытаюсь понять как все устроено'
+		sh 'echo Сейчас будет длинный вывод, якобы выполняется что-то серьезное...'
+		sh 'ping -c5 google.com'
+		sh 'host mail.ru'
+		sh 'whois 77.88.8.8'
+ 	}
+     }
+   }
+}
