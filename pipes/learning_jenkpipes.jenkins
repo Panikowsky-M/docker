@@ -22,7 +22,7 @@ pipeline {
          }
 	stage("JenkinsPipesSecondTry") {
 	  steps {
-		sh 'Посмотрим что лежит в хомяке у женьки ...'
+		sh 'echo Посмотрим что лежит в хомяке у женьки ...'
 		sh 'ls -al $JENKINS_HOME'
 	      }
           }
