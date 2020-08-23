@@ -11,7 +11,7 @@ pipeline {
 	timestamps()
 	}
   stages {
-	stage("DockerBuildFirstTry") {
+	stage("СборкаОбразаДокер") {
 	  steps {
  	     
 	      sh 'docker build awesomesite/ -t awesomedockered$BUILD_NUMBER'
@@ -19,11 +19,20 @@ pipeline {
 	   }
          }
 
-   	  stage("DockerRunExstImage"){
+   	  stage("ЗапускКонтейнера"){
   	   steps {
 	      	  sh 'docker run --rm --name awesome_d$BUILD_NUMBER -p 83:83 -d awesomedockered$BUILD_NUMBER'
 	      	  sh 'docker ps -a'
      	     }
      	  }
+	
+   	stage("ОчисткаМеста"){
+	 steps {
+		sh 'bash ./countD.sh'
+		sh 'docker rm -f awesome_d$BUILD_NUMBER'
+		sh 'echo Последний контейнер был удален'
+		sh 'echo При необходимости стирайте образы вручную'
+	     }
+	  }
   }
 }
