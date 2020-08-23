@@ -11,11 +11,12 @@ pipeline {
 	timestamps()
 	}
   stages {
-	stage("JenkPipesFirstTry") {
+	stage("DockerBuildFirstTry") {
 	  steps {
- 	     }
+ 	     
 	      sh 'docker build awesomesite/ -t awesomedockered$BUILD_NUMBER'
 	      sh 'docker run --rm --name awesome_d$BUILD_NUMBER -d awesomedockered$BUILD_NUMBER'
+	   }
          }
      }
 }
