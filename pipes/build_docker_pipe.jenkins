@@ -1,0 +1,21 @@
+#!groovy
+
+properties([disableConcurrentBuilds()])
+
+pipeline {
+   agent{
+	label 'master'
+   }
+     options {
+	buildDiscarder(logRotator(numToKeepStr: '15', artifactNumToKeepStr: '15'))
+	timestamps()
+	}
+  stages {
+	stage("JenkPipesFirstTry") {
+	  steps {
+ 	     }
+	      sh 'docker build awesomesite/ -t awesomedockered$BUILD_NUMBER'
+	      sh 'docker run --rm --name awesome_d$BUILD_NUMBER -d awesomedockered$BUILD_NUMBER'
+         }
+     }
+}
