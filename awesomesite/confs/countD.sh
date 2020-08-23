@@ -12,3 +12,4 @@ echo Время: $Mytimer;
 sleep 1;
 done
 echo Внимание контейнер стирается
+sleep 2
