@@ -28,7 +28,7 @@ pipeline {
 	
    	stage("ОчисткаМеста"){
 	 steps {
-		sh 'bash ./countD.sh'
+		sh 'bash ./awesomesite/confs/countD.sh'
 		sh 'docker rm -f awesome_d$BUILD_NUMBER'
 		sh 'echo Последний контейнер был удален'
 		sh 'echo При необходимости стирайте образы вручную'
