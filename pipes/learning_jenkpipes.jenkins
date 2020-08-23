@@ -24,6 +24,7 @@ pipeline {
 	  steps {
 		sh 'echo Посмотрим что лежит в хомяке у женьки ...'
 		sh 'ls -al $JENKINS_HOME'
+		sh 'echo $BUILD_NUMBER'
 	      }
           }
       }
