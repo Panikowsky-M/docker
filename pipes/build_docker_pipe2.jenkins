@@ -1,0 +1,38 @@
+#!groovy
+
+properties([disableConcurrentBuilds()])
+
+pipeline {
+   agent{
+	label 'master'
+   }
+     options {
+	buildDiscarder(logRotator(numToKeepStr: '15', artifactNumToKeepStr: '15'))
+	timestamps()
+	}
+  stages {
+	stage("СборкаОбразаДокер") {
+	  steps {
+ 	     
+	      sh 'docker build victim/ -t victimdockered$BUILD_NUMBER'
+	      sh 'docker images'
+	   }
+         }
+
+   	  stage("ЗапускКонтейнера"){
+  	   steps {
+	      	  sh 'docker run --rm --name victim_d$BUILD_NUMBER -p 83:83 -d victimdockered$BUILD_NUMBER'
+	      	  sh 'docker ps -a'
+     	     }
+     	  }
+	
+   	stage("ОчисткаМеста"){
+	 steps {
+		sh 'bash ./victim/confs/countD.sh'
+		sh 'docker rm -f victim_d$BUILD_NUMBER'
+		sh 'echo Последний контейнер был удален'
+		sh 'echo При необходимости стирайте образы вручную'
+	     }
+	  }
+  }
+}
