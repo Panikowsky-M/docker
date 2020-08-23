@@ -16,9 +16,14 @@ pipeline {
  	     
 	      sh 'docker build awesomesite/ -t awesomedockered$BUILD_NUMBER'
 	      sh 'docker images'
-	      sh 'docker run --rm --name awesome_d$BUILD_NUMBER -p 83 -d awesomedockered$BUILD_NUMBER'
-	      sh 'docker ps -a'
 	   }
          }
-     }
+
+   	  stage("DockerRunExstImage"){
+  	   steps {
+	      	  sh 'docker run --rm --name awesome_d$BUILD_NUMBER -p 83:83 -d awesomedockered$BUILD_NUMBER'
+	      	  sh 'docker ps -a'
+     	     }
+     	  }
+  }
 }
