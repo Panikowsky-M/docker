@@ -21,7 +21,7 @@ pipeline {
 
    	  stage("ЗапускКонтейнера"){
   	   steps {
-	      	  sh 'docker run --rm --name victim_d$BUILD_NUMBER -p 83:83 -d victimdockered$BUILD_NUMBER'
+	      	  sh 'docker run --rm --name victim_d$BUILD_NUMBER -p 84:84 -d victimdockered$BUILD_NUMBER'
 	      	  sh 'docker ps -a'
      	     }
      	  }
