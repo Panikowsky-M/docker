@@ -28,7 +28,7 @@ pipeline {
 	
    	stage("ОчисткаМеста"){
 	 steps {
-		sh 'bash ./victim/confs/countD.sh'
+		sh 'bash ./btnc/confs/countD.sh'
 		sh 'docker rm -f btnc_d$BUILD_NUMBER'
 		sh 'echo Последний контейнер был удален'
 		sh 'echo При необходимости стирайте образы вручную'
