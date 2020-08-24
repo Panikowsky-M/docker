@@ -14,14 +14,14 @@ pipeline {
 	stage("СборкаОбразаДокер") {
 	  steps {
  	     
-	      sh 'docker build victim/ -t victimdockered$BUILD_NUMBER'
+	      sh 'docker build btnc/ -t btnc$BUILD_NUMBER'
 	      sh 'docker images'
 	   }
          }
 
    	  stage("ЗапускКонтейнера"){
   	   steps {
-	      	  sh 'docker run --rm --name victim_d$BUILD_NUMBER -p 84:84 -d victimdockered$BUILD_NUMBER'
+	      	  sh 'docker run --rm --name btnc_d$BUILD_NUMBER -p 84:84 -d btnc$BUILD_NUMBER'
 	      	  sh 'docker ps -a'
      	     }
      	  }
@@ -29,7 +29,7 @@ pipeline {
    	stage("ОчисткаМеста"){
 	 steps {
 		sh 'bash ./victim/confs/countD.sh'
-		sh 'docker rm -f victim_d$BUILD_NUMBER'
+		sh 'docker rm -f btnc_d$BUILD_NUMBER'
 		sh 'echo Последний контейнер был удален'
 		sh 'echo При необходимости стирайте образы вручную'
 	     }
