@@ -1,3 +1,3 @@
-FROM awesomedockered13:first_succed
+FROM ymxb0:latest
 
 EXPOSE 83

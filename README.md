@@ -6,12 +6,12 @@
 
 # Содержание каталогов
 
-1. [awesomesite](https://github.com/Panikowsky-M/docker/tree/master/awesomesite)
-2. [victim](https://github.com/Panikowsky-M/docker/tree/master/victim)
+1. [awesomesite](https://github.com/Panikowsky-M/docker/tree/master/ymxb)
+2. [victim](https://github.com/Panikowsky-M/docker/tree/master/btnc)
 3. [flatris](https://github.com/Panikowsky-M/docker/tree/master/flatris)
 4. [pipes](https://github.com/Panikowsky-M/docker/tree/master/pipes)
 
-## Каталог [**awesomsite/**](https://github.com/Panikowsky-M/docker/tree/master/awesomesite)
+## Каталог [**awesomsite/**](https://github.com/Panikowsky-M/docker/tree/master/ymxb)
 
 Содержит в себе структуру файлов и каталогов для развертывания небольшого сайта.
 Каталог пригоден как для развертывания самостоятельного веб-сервера на базе **nginx**,
@@ -20,7 +20,7 @@
 в докер-контейнере, так как в корне лежит докер-файл специально под контейнер **alpine-nginx-php**, 
 но и его при желании можно адаптировать под аналогичную конфигурацию на **Apache**.
 
-## Каталог [**victim/**](https://github.com/Panikowsky-M/docker/tree/master/victim)
+## Каталог [**victim/**](https://github.com/Panikowsky-M/docker/tree/master/btnc)
 
 Содержит в себе структуру файлов и каталогов для развертывания дополнительного и/или дополняющего
 домена для awesomesite.

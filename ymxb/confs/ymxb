@@ -2,13 +2,13 @@
 	listen 83;
 	listen [::]:83;
 
-	server_name awesomesite;
+	server_name su.ymxb.net;
 
-	root /var/www/awesomesite;
+	root /var/www/ymxb;
 	index 0page.html;
 
 	location / {
-		add_header 'Access-Control-Allow-Origin' 'http://www.victim.com';
+		add_header 'Access-Control-Allow-Origin' 'http://su.btnc.com';
 		try_files $uri $uri/ =404;
 	      }
 	 location /php {
