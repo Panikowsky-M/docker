@@ -4,6 +4,6 @@ RUN mkdir /var/www/btnc
 
 COPY site/ /var/www/btnc/
 COPY confs/btnc /etc/nginx/sites-available/default.conf
-RUN  apk add vim && nginx -t
+RUN nginx -t
 
 EXPOSE 84
