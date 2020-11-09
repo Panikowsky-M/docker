@@ -10,6 +10,7 @@
 2. [victim](https://github.com/Panikowsky-M/docker/tree/master/btnc)
 3. [flatris](https://github.com/Panikowsky-M/docker/tree/master/flatris)
 4. [pipes](https://github.com/Panikowsky-M/docker/tree/master/pipes)
+5. [genavatar](https://github.com/Panikowsky-M/docker/tree/master/genavatar)
 
 ## Каталог [**awesomsite/**](https://github.com/Panikowsky-M/docker/tree/master/ymxb)
 
@@ -37,6 +38,12 @@
 ## Каталог [**pipes**](https://github.com/Panikowsky-M/docker/tree/master/pipes)
 
 Содержит в себе описание того, как должны собираться различные задачи на [Женкинсе](https://www.jenkins.io/).
+
+## Каталог [**genavatar**](https://github.com/Panikowsky-M/docker/tree/master/genavatar)
+
+Нужен для освоения разработки контейнеризованного приложения.
+Приложение будет генерировать аватар пользователя на основе его псевдонима.
+По аналогии с гитхаб или стаковерфлоу.
 
 # Задачи на будущее
 
