@@ -1,8 +1,11 @@
-FROM python:3.4
+FROM python:3.5
 
-RUN pip install Flask==0.10.1 uWSGI
-RUN groupadd -r uwsgi && useradd -r -g uwsgi uwsgi
-RUN mkdir src/
+#RUN pip install --upgrade pip
+RUN pip install --trusted-host pypi.org \
+        --trusted-host files.pythonhosted.org \
+        Flask uWSGI requests==2.5.1
+RUN groupadd -r uwsgi && useradd -r -g uwsgi uwsgi \
+    && mkdir src/
 EXPOSE 9090 9191
 USER uwsgi
 COPY src src/
