@@ -1,21 +1,27 @@
-from flask import Flask, Response
-import requests
+from flask import Flask, Response,request
+import requests,hashlib
 
 app = Flask(__name__)
+SALT = "67a89dfee123b729"
 DEFAULTNAME = 'Dmitry'
 
-@app.route('/')
+@app.route('/',methods=['GET','POST'])
 def indexHTML():
 	name = DEFAULTNAME
+	if request.method == 'POST':
+		name = request.form['name']
+
+	salted_name = name + SALT
+	name_hash = hashlib.sha256( salted_name.encode() ).hexdigest()
 	
 	head = '<html><head><meta charset=utf-8><title>Генератор аватаров</title></head><body>'
 	body = '''<form method=POST>
-		  Hello <input type=text name=name value={}>
+		  Hello <input type=text name=name value={0}>
 		  <input type=submit value=submit>
 		 </form>
 		 <p>Ваш аватар:</p>
-		<img src="/monster/monster.png"/>
-		'''.format(name)
+		<img src="/monster/{1}"/>
+		'''.format(name,name_hash)
 	tail = '</body></html>'
 	return head + body + tail
 
