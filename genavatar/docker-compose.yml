@@ -6,3 +6,8 @@ avatargen:
    ENV: DEV
   volumes:
    - ./src:/src
+  links:
+   - monsterpic
+
+monsterpic:
+  image: amouat/dnmonster:1.0
