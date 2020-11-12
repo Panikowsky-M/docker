@@ -1,8 +1,11 @@
 FROM python:3.4
 
 RUN pip install Flask==0.10.1 uWSGI
+RUN groupadd -r uwsgi && useradd -r -g uwsgi uwsgi
 RUN mkdir src/
+EXPOSE 9090 9191
+USER uwsgi
 COPY src src/
+COPY scripts scripts/
 
-CMD ["uwsgi","--http","0.0.0.0:9090","--wsgi-file","/src/avatargen.py",\
-    "--callable","app","--stats","0.0.0.0:9191"]
+CMD ["scripts/chenv.sh"]
