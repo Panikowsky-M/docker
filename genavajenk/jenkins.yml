@@ -1,0 +1,15 @@
+avatargen:
+  build: .
+  expose:
+   - "9000"
+  environment:
+   ENV: PROD
+  links:
+   - monsterpic
+   - redis
+
+monsterpic:
+  image: amouat/dnmonster:1.0
+
+redis:
+  image: redis:3.0
