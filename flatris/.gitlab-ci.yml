@@ -1,8 +1,0 @@
-image: docker
-
-services:
-- docker:dind
-
-build:
-  script:
-    - docker build . --tag alpinetris
