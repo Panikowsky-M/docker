@@ -47,18 +47,23 @@
 
 В нем содержится проект стенда для тренировок по инфобезу.
 Будет содержать в себе:
+
 			- DVWA
 			- OWASP Mutillidae
 		 	- XVWA
+
 Сборку контейнера инициируют командой:
 				      ```
 				      docker build . -t name:tag
 				      ```
+
 Запускают контейнер командой:
+
 				     ```
 				     docker run -d -v /путь/к/данным:/var/www/localhost/htdocs/ -e MYSQL_ROOT_PASSWORD=password -p 80:80 -p 3306:3306 --name lamp $USER_REPO/vulnweb
 
 				     ```
+
 Возможна ошибка 403, для ее решения измените права к вашему тому
 	```
 	sudo chmod -Rf 755 /path/to/project
