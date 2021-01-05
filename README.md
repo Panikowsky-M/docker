@@ -59,7 +59,7 @@
 
 Запускают контейнер командой:
 		          ```
-                          docker run -d -v /путь/к/данным:/var/www/localhost/htdocs/ -e MYSQL_ROOT_PASSWORD=password -p 80:80 -p 3306:3306 --name lamp $USER_REPO/vulnweb
+                          docker run -d -v /путь/к/данным:/var/www/localhost/htdocs/ -e MYSQL_ROOT_PASSWORD=password -p 80:80 -p 3306:3306 --name vulnweb $USER_REPO/vulnweb
                           ```
 
 Возможна ошибка 403, для ее решения измените права к вашему тому
