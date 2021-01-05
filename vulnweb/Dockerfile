@@ -69,6 +69,8 @@ RUN chmod u+x /entry.sh
 
 WORKDIR /var/www/localhost/htdocs/
 
+COPY src/confs/dvwa/config/config.inc.php /var/www/localhost/htdocs/DVWA-master/config/
+
 EXPOSE 80
 EXPOSE 3306
 
