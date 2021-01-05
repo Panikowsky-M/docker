@@ -11,6 +11,7 @@
 3. [flatris](https://github.com/Panikowsky-M/docker/tree/master/flatris)
 4. [pipes](https://github.com/Panikowsky-M/docker/tree/master/pipes)
 5. [genavatar](https://github.com/Panikowsky-M/docker/tree/master/genavatar)
+6. [vulnweb](https://github.com/Panikowsky-M/docker/tree/master/vulnweb)
 
 ## Каталог [**awesomsite/**](https://github.com/Panikowsky-M/docker/tree/master/ymxb)
 
@@ -29,11 +30,8 @@
 и в контейнере см. каталог [**victim/confs**](https://github.com/Panikowsky-M/docker/tree/master/victim/confs).
 
 ## Каталог [**flatris/**](https://github.com/Panikowsky-M/docker/tree/master/flatris)
-
-Он содержит структуру для развертывания веб-игры на подобие тетриса.
-Работает под управлением **node.js** не берусь сказать на счет самостоятельного запуска 
-под node, потому как это проект необходимо было повторить в рамках интенсива и он изначально
-был сконфигурирован под контейнер **node:alpine**.
+Раньше содержал игру (не мою, не выполнил и не собираюсь выполнять пункт 2 из задач на будущее,
+поэтому я вскоре вообще сотру этот каталог).
 
 ## Каталог [**pipes**](https://github.com/Panikowsky-M/docker/tree/master/pipes)
 
@@ -45,7 +43,30 @@
 Приложение будет генерировать аватар пользователя на основе его псевдонима.
 По аналогии с гитхаб или стаковерфлоу.
 
+## Каталог [**vulnweb**](https://github.com/Panikowsky-M/docker/tree/master/vulnweb)
+
+В нем содержится проект стенда для тренировок по инфобезу.
+Будет содержать в себе:
+			- DVWA
+			- OWASP Mutillidae
+		 	- XVWA
+Сборку контейнера инициируют командой:
+				      ```
+				      docker build . -t name:tag
+				      ```
+Запускают контейнер командой:
+				     ```
+				     docker run -d -v /путь/к/данным:/var/www/localhost/htdocs/ -e MYSQL_ROOT_PASSWORD=password -p 80:80 -p 3306:3306 --name lamp $USER_REPO/vulnweb
+
+				     ```
+Возможна ошибка 403, для ее решения измените права к вашему тому
+	```
+	sudo chmod -Rf 755 /path/to/project
+	```
+
 # Задачи на будущее
 
-1. Сконфигурировать контейнеры на доменные имена www.awesomesite.com www.victim.com.
-2. Добавить замечания по использованию flatris. (Возможно ссылку на автора)
+1. Добавить LICENSE
+2. Добавить источник вдохновения для vulnweb
+3. Удалить полностью флатрис
+4. Сконфигурировать контейнеры на доменные имена www.awesomesite.com www.victim.com.
