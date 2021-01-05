@@ -1,5 +1,15 @@
 #!/bin/sh
 
+# Установка phpmyadmin
+echo "M: Установка phpmyadmin"
+mkdir -p /usr/share/webapps/ && cd /usr/share/webapps/ && \
+    wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-languages.tar.gz > /dev/null 2>&1 && \
+    tar -xzvf phpMyAdmin-4.9.0.1-all-languages.tar.gz > /dev/null 2>&1 && \
+    mv phpMyAdmin-4.9.0.1-all-languages phpmyadmin && \
+    chmod -R 777 /usr/share/webapps/ && \
+    ln -s /usr/share/webapps/phpmyadmin/ /var/www/localhost/htdocs/phpmyadmin
+echo "S: Успех!"
+
 # Запуск паши
 echo "M: Запуск httpd"
 httpd
@@ -10,7 +20,7 @@ echo "M: httpd загружен и работает"
 echo "M: Проверка /var/lib/mysql"
 if [ ! -f /var/lib/mysql/ibdata1 ]; then 
     echo "M: Установка базы данных"
-    mysql_install_db --user=mysql --ldata=/var/lib/mysql > /dev/null
+    mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql > /dev/null
     echo "M: База установлена"
 fi;
 

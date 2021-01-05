@@ -34,7 +34,7 @@ RUN apk add mariadb mariadb-client \
 RUN curl -sS https://getcomposer.org/installer | \
     php -- --install-dir=/usr/bin --filename=composer
 
-# configure timezone, mysql, apache
+# Настройка времени, mysql и apache
 RUN cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && \
     echo "${TIMEZONE}" > /etc/timezone && \
     mkdir -p /run/mysqld && chown -R mysql:mysql /run/mysqld /var/lib/mysql && \
@@ -55,7 +55,7 @@ RUN sed -i 's#display_errors = Off#display_errors = On#' /etc/php7/php.ini && \
     sed -i 's#error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT#error_reporting = E_ALL#' /etc/php7/php.ini
 
 
-# Configure xdebug
+# Настройка xdebug
 RUN echo "zend_extension=xdebug.so" > /etc/php7/conf.d/xdebug.ini && \ 
     echo -e "\n[XDEBUG]"  >> /etc/php7/conf.d/xdebug.ini && \ 
     echo "xdebug.remote_enable=1" >> /etc/php7/conf.d/xdebug.ini && \  
