@@ -1,10 +1,18 @@
 #!/bin/sh
 
-# Установка dvwa
+echo "N: Установка dvwa"
 wget https://github.com/ethicalhack3r/DVWA/archive/master.zip -O /var/www/localhost/htdocs/dvwa.zip && \
-unzip -d /var/www/localhost/htdocs/ /var/www/localhost/htdocs/dvwa.zip && \
+echo "N: Идет распаковка ..."
+unzip -d /var/www/localhost/htdocs/ /var/www/localhost/htdocs/dvwa.zip 1>/dev/null && \
 rm /var/www/localhost/htdocs/dvwa.zip && \
 echo "S: DVWA Установлен !"
+
+echo "N: Установка OWASP Mutillidae ..."
+wget https://deac-ams.dl.sourceforge.net/project/mutillidae/mutillidae-project/NOT-LATEST-MUTILLIDAE-MOVED-TO-GITHUB-mutillidae-2.6.67.zip -O /var/www/localhost/htdocs/mutillidae.zip && \
+echo "N: Идет распаковка ..."
+unzip -d /var/www/localhost/htdocs/ /var/www/localhost/htdocs/mutillidae.zip 1>/dev/null && \
+rm /var/www/localhost/htdocs/mutillidae.zip && \
+echo "S: OWASP Mutillidae установлен !"
 
 # Установка phpmyadmin
 echo "M: Установка phpmyadmin"
