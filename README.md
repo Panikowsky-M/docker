@@ -8,10 +8,9 @@
 
 1. [awesomesite](https://github.com/Panikowsky-M/docker/tree/master/ymxb)
 2. [victim](https://github.com/Panikowsky-M/docker/tree/master/btnc)
-3. [flatris](https://github.com/Panikowsky-M/docker/tree/master/flatris)
-4. [pipes](https://github.com/Panikowsky-M/docker/tree/master/pipes)
-5. [genavatar](https://github.com/Panikowsky-M/docker/tree/master/genavatar)
-6. [vulnweb](https://github.com/Panikowsky-M/docker/tree/master/vulnweb)
+3. [pipes](https://github.com/Panikowsky-M/docker/tree/master/pipes)
+4. [genavatar](https://github.com/Panikowsky-M/docker/tree/master/genavatar)
+5. [vulnweb](https://github.com/Panikowsky-M/docker/tree/master/vulnweb)
 
 ## Каталог [**awesomsite/**](https://github.com/Panikowsky-M/docker/tree/master/ymxb)
 
@@ -46,10 +45,18 @@
 ## Каталог [**vulnweb**](https://github.com/Panikowsky-M/docker/tree/master/vulnweb)
 
 В нем содержится проект стенда для тренировок по инфобезу.
-Будет содержать в себе:
+Проект собран под архитектуру i686, так как предназначен для работы на 
+[**Asus eeePC P900**](https://zoom.cnews.ru/goods_card/item/109580/asus-eee-pc-900).
+Вообще на этой микроволновке стенд показал исправную работу.
+Если очень грубо, то работает стенд шустро, без падений при наличии 1 ГБ DDR2 и Целероном на 
+борту. Все желающие могут взять его протестировать, принимаю вопросы, жалобы, заявления и 
+предложения в Issues или пулл-реквест.
+Стенд уже содержит в себе:
 
 			- DVWA
-			- OWASP Mutillidae
+			- OWASP Mutillidae II
+			- bWAPP
+Планируется добавить:
 		 	- XVWA
 
 Сборку контейнера инициируют командой:
@@ -71,5 +78,4 @@
 
 1. Добавить LICENSE
 2. Добавить источник вдохновения для vulnweb
-3. Удалить полностью флатрис
-4. Сконфигурировать контейнеры на доменные имена www.awesomesite.com www.victim.com.
+3. Сконфигурировать контейнеры на доменные имена www.awesomesite.com www.victim.com.
