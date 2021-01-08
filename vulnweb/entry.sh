@@ -2,10 +2,22 @@
 
 echo "N: Установка dvwa"
 wget https://github.com/ethicalhack3r/DVWA/archive/master.zip -O /var/www/localhost/htdocs/dvwa.zip && \
-echo "N: Идет распаковка ..."
+echo "N: Идет распаковка ..." && \
 unzip -d /var/www/localhost/htdocs/ /var/www/localhost/htdocs/dvwa.zip 1>/dev/null && \
 rm /var/www/localhost/htdocs/dvwa.zip && \
 echo "S: DVWA Установлен !"
+
+echo "N: Установка bWAPP"
+wget https://deac-riga.dl.sourceforge.net/project/bwapp/bWAPP/bWAPP_latest.zip -O /var/www/localhost/htdocs/bWAPP.zip && \
+echo "N: Идет распаковка ..." && \
+mkdir /var/www/localhost/htdocs/bwapp && \
+unzip -d /var/www/localhost/htdocs/bwapp/ /var/www/localhost/htdocs/bWAPP.zip 1>/dev/null && \
+rm /var/www/localhost/htdocs/bWAPP.zip && \
+chmod 777 /var/www/localhost/htdocs/bwapp/bWAPP/passwords/ && \
+chmod 777 /var/www/localhost/htdocs/bwapp/bWAPP/logs/	   && \
+chmod 777 /var/www/localhost/htdocs/bwapp/bWAPP/images/	   && \
+chmod 777 /var/www/localhost/htdocs/bwapp/bWAPP/documents/ && \
+echo "S: bWAPP установлен !"
 
 echo "N: Установка OWASP Mutillidae ..."
 wget https://deac-ams.dl.sourceforge.net/project/mutillidae/mutillidae-project/NOT-LATEST-MUTILLIDAE-MOVED-TO-GITHUB-mutillidae-2.6.67.zip -O /var/www/localhost/htdocs/mutillidae.zip && \
