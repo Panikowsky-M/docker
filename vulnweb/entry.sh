@@ -1,40 +1,60 @@
 #!/bin/sh
 
-echo "N: Установка dvwa"
-wget https://github.com/ethicalhack3r/DVWA/archive/master.zip -O /var/www/localhost/htdocs/dvwa.zip && \
-echo "N: Идет распаковка ..." && \
-unzip -d /var/www/localhost/htdocs/ /var/www/localhost/htdocs/dvwa.zip 1>/dev/null && \
-rm /var/www/localhost/htdocs/dvwa.zip && \
+if [ -e /var/www/localhost/htdocs/DVWA-master ]
+then echo "M: Установка dvwa не требуется!"
+	echo "N: Переход к следующему этапу ..."
+else
+	echo "N: Установка dvwa"
+	wget https://github.com/ethicalhack3r/DVWA/archive/master.zip -O /var/www/localhost/htdocs/dvwa.zip && \
+	echo "N: Идет распаковка ..." && \
+	unzip -d /var/www/localhost/htdocs/ /var/www/localhost/htdocs/dvwa.zip 1>/dev/null && \
+	rm /var/www/localhost/htdocs/dvwa.zip && \
 echo "S: DVWA Установлен !"
+fi
 
-echo "N: Установка bWAPP"
-wget https://deac-riga.dl.sourceforge.net/project/bwapp/bWAPP/bWAPP_latest.zip -O /var/www/localhost/htdocs/bWAPP.zip && \
-echo "N: Идет распаковка ..." && \
-mkdir /var/www/localhost/htdocs/bwapp && \
-unzip -d /var/www/localhost/htdocs/bwapp/ /var/www/localhost/htdocs/bWAPP.zip 1>/dev/null && \
-rm /var/www/localhost/htdocs/bWAPP.zip && \
-chmod 777 /var/www/localhost/htdocs/bwapp/bWAPP/passwords/ && \
-chmod 777 /var/www/localhost/htdocs/bwapp/bWAPP/logs/	   && \
-chmod 777 /var/www/localhost/htdocs/bwapp/bWAPP/images/	   && \
-chmod 777 /var/www/localhost/htdocs/bwapp/bWAPP/documents/ && \
-echo "S: bWAPP установлен !"
+if [ -e /var/www/localhost/htdocs/bwapp ]
+then echo "M: Установка bWAPP не требуется!"
+	echo "N: Переход к следующему этапу ..."
+else
+	echo "N: Установка bWAPP"
+	wget https://deac-riga.dl.sourceforge.net/project/bwapp/bWAPP/bWAPP_latest.zip -O /var/www/localhost/htdocs/bWAPP.zip && \
+	echo "N: Идет распаковка ..." && \
+	mkdir /var/www/localhost/htdocs/bwapp && \
+	unzip -d /var/www/localhost/htdocs/bwapp/ /var/www/localhost/htdocs/bWAPP.zip 1>/dev/null && \
+	rm /var/www/localhost/htdocs/bWAPP.zip && \
+	chmod 777 /var/www/localhost/htdocs/bwapp/bWAPP/passwords/ && \
+	chmod 777 /var/www/localhost/htdocs/bwapp/bWAPP/logs/	   && \
+	chmod 777 /var/www/localhost/htdocs/bwapp/bWAPP/images/	   && \
+	chmod 777 /var/www/localhost/htdocs/bwapp/bWAPP/documents/ && \
+	echo "S: bWAPP установлен !"
+fi
 
-echo "N: Установка OWASP Mutillidae ..."
-wget https://deac-ams.dl.sourceforge.net/project/mutillidae/mutillidae-project/NOT-LATEST-MUTILLIDAE-MOVED-TO-GITHUB-mutillidae-2.6.67.zip -O /var/www/localhost/htdocs/mutillidae.zip && \
-echo "N: Идет распаковка ..."
-unzip -d /var/www/localhost/htdocs/ /var/www/localhost/htdocs/mutillidae.zip 1>/dev/null && \
-rm /var/www/localhost/htdocs/mutillidae.zip && \
-echo "S: OWASP Mutillidae установлен !"
+if [ -e /var/www/localhost/htdocs/mutillidae ]
+then echo "M: Установка mutillidae не требуется!"
+	echo "N: Переход к следующему этапу ..."
+else
+	echo "N: Установка OWASP Mutillidae ..."
+	wget https://deac-ams.dl.sourceforge.net/project/mutillidae/mutillidae-project/NOT-LATEST-MUTILLIDAE-MOVED-TO-GITHUB-mutillidae-2.6.67.zip -O /var/www/localhost/htdocs/mutillidae.zip && \
+	echo "N: Идет распаковка ..."
+	unzip -d /var/www/localhost/htdocs/ /var/www/localhost/htdocs/mutillidae.zip 1>/dev/null && \
+	rm /var/www/localhost/htdocs/mutillidae.zip && \
+	echo "S: OWASP Mutillidae установлен !"
+fi
 
 # Установка phpmyadmin
-echo "M: Установка phpmyadmin"
-mkdir -p /usr/share/webapps/ && cd /usr/share/webapps/ && \
-    wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-languages.tar.gz > /dev/null 2>&1 && \
-    tar -xzvf phpMyAdmin-4.9.0.1-all-languages.tar.gz > /dev/null 2>&1 && \
-    mv phpMyAdmin-4.9.0.1-all-languages phpmyadmin && \
-    chmod -R 777 /usr/share/webapps/ && \
-    ln -s /usr/share/webapps/phpmyadmin/ /var/www/localhost/htdocs/management
-echo "S: Успех!"
+if [ -e /var/www/localhost/htdocs/management ]
+then echo "M: Установка phpmyadmin не требуется !"
+	echo "N: Переход к следующему этапу ..."
+else
+	echo "M: Установка phpmyadmin"
+	mkdir -p /usr/share/webapps/ && cd /usr/share/webapps/ && \
+	    wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-languages.tar.gz > /dev/null 2>&1 && \
+	    tar -xzvf phpMyAdmin-4.9.0.1-all-languages.tar.gz > /dev/null 2>&1 && \
+	    mv phpMyAdmin-4.9.0.1-all-languages phpmyadmin && \
+	    chmod -R 777 /usr/share/webapps/ && \
+	    ln -s /usr/share/webapps/phpmyadmin/ /var/www/localhost/htdocs/management
+	echo "S: Успех!"
+fi
 
 # Запуск паши
 echo "M: Запуск httpd"
