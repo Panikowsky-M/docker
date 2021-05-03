@@ -1,8 +1,8 @@
 from flask import Flask, Response,request
-import requests,hashlib
+import requests,hashlib,random
 
 app = Flask(__name__)
-SALT = "67a89dfee123b729"
+SALT = str(random.getrandbits(128))
 DEFAULTNAME = 'Dmitry'
 
 @app.route('/',methods=['GET','POST'])
