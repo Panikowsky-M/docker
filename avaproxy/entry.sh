@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-sed -i "s|{{NGINX_HOST}}|$NGINX_HOST|;s|{{NGINX_PROXY}}|$NGINX_PROXY|"\
+sed -i "s|{{VM_ADDR}}|$VM_ADDR|;s|{{CONTAINER}}|$CONTAINER|"\
 	/etc/nginx/conf.d/default.conf
 cat /etc/nginx/conf.d/default.conf;
 exec "$@"
