@@ -1,9 +1,12 @@
 proxy:
-  image: avaproxy:testing030521
+  image: cr.yandex/crpk1ln2o51l4tvcp5gh/avaproxy:1.0
   links:
     - generator
   ports:
     - "80:80"
+  environment:
+      - VM_ADDR=__your_vm_ip_here
+      - CONTAINER=http://generator:5000
 generator:
   image: cr.yandex/crpk1ln2o51l4tvcp5gh/genavatar:testing020521_2335
   environment:
