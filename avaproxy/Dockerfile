@@ -1,3 +1,3 @@
-FROM yobasystems/alpine-nginx:latest
+FROM nginx:1.7
 
-COPY my-first-test.conf /etc/nginx/nginx.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
