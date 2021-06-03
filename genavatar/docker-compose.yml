@@ -5,7 +5,7 @@ proxy:
   ports:
     - "80:80"
   environment:
-      - VM_ADDR=__your_vm_ip_here
+      - VM_ADDR=10.128.0.12
       - CONTAINER=http://generator:5000
 generator:
   image: cr.yandex/crpk1ln2o51l4tvcp5gh/genavatar:testing020521_2335
@@ -16,3 +16,10 @@ generator:
 
 monsterpic:
   image: amouat/dnmonster:1.0
+
+logspout:
+  image: amouat/logspout-logstash
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock
+  ports:
+    - "8000:80"
