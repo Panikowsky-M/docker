@@ -5,7 +5,7 @@ proxy:
   ports:
     - "80:80"
   environment:
-      - VM_ADDR=10.128.0.12
+      - VM_ADDR= $VM_IP
       - CONTAINER=http://generator:5000
 generator:
   image: cr.yandex/crpk1ln2o51l4tvcp5gh/genavatar:testing020521_2335
@@ -28,9 +28,14 @@ logspout:
   command: logstash://logstash:5000
 
 logstash:
-  image: logstash:1.5
+  image: logstash:alpine_test070721
   volumes:
-    - /home/$VM_USER/docker-volume/logstash/:/etc/logstash/conf.d/
+    - /home/$VM_USER/docker-data/logstash/:/etc/logstash/conf.d/
   environment:
     LOGSPOUT: ignore
   command: -f /etc/logstash/conf.d/ruby-out.conf
+
+elasticsearch:
+  image: elasticsearch:1.7
+  environment:
+    LOGSPOUT: ignore
